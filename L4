@@ -51,10 +51,10 @@ float mcos(float angle) {
 }
 void test_add(void)
 {
-	printf("Test 1: \n\t 2.5+8.4 Oczekiwano: 10.9, \n\t a uzyskano: %g\n", add(2.5, 8.4));
+	printf("Test 1: \n\t 2.5+8.4 Oczekiwano: 4.1, \n\t a uzyskano: %g\n", add(2.1, 2.0));
 	printf("Test 2: \n\t 0.1+0 Oczekiwano: 0.1, \n\t a uzyskano: %g\n", add(0.1, 0.0));
 	printf("Test 3: \n\t 2.09+0.05 Oczekiwano: 2.14, \n\t a uzyskano: %g\n", add(2.09, 0.05));
-	printf("Test 4: \n\t 2.77+5 Oczekiwano: 7.77, \n\t a uzyskano: %g\n", add(2.77, 5));
+	printf("Test 4: \n\t 2.77+5 Oczekiwano: 7.77, \n\t a uzyskano: %g\n", add(2.77, 5.0));
 	printf("Test 5: \n\t 42+0 Oczekiwano: 42, \n\t a uzyskano: %g\n", add(42, 0));
 	printf("Test 6: \n\t 0.0000000001+0 Oczekiwano: 0,0000000001, \n\t a uzyskano: %.12f\n", add(0.0000000001, 0.0));
 
