@@ -5,23 +5,26 @@
 \usepackage [OT4, plmath] {polski}
 
 \usepackage [utf8] {inputenc}
+
 \usepackage {graphics}
+
 \usepackage {multicol}
 
+\usepackage{graphicx}
 
+\usepackage{helvet}
 
+\usepackage{float}
 
 
 \begin {document}
 
-
-
-
-
-
-
-
 \begin{center}
+
+\includegraphics[width=0.4\textwidth]{zut_1}
+\includegraphics{wi_1}\newline\newline\newline
+
+\fontfamily{phv}
 
 \textbf {\large Jarosław Pytel} \newline
 
@@ -54,18 +57,18 @@ Katedra Śmiesznych Gierek\newline
 \end {center}
 
 
-
-\small{Data wydania tematu pracy:~~~~~~~~~~~~~~~~~31.01.2018}\newline
+\begin{flushleft}
+\small{Data wydania tematu pracy:~~~~~~~~~~~~20.04.2020}\newline
 
 \small {Data dopuszczenia pracy do egzaminu:……………………………}
 
 \small {(uzupełnia pisemnie Dziekanat)}\newline
 
-
+\end{flushleft}
 
 \begin {center}
 \begin {flushright}
-\large {Szczecin, 2019}\newline
+\large {Szczecin, 2020}\newline
 \end {flushright}
 \end {center}
 
