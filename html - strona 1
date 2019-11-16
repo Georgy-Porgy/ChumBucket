@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta charset="utf-8">
+
+<title>Page Title</title>
+
+
+
+
+
+
+
+<style>
+html{
+	font-family: arial;
+}
+
+
+sector{
+}
+
+
+main {
+	width: 970px;
+	padding: 25px;
+	border: 25px;
+	height: 1080px; 
+	opacity: 0.8;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.8);
+}
+body {
+	background-image: url('mtns.jpg');
+	background-repeat: no-repeat;
+	backgroud-attachment: fixed;
+	background-size: cover;
+}
+</style>
+
+</head>
+<body>
+<main> 
+<sector>
+
+<h1>Główny tytuł</h1>
+<p>Suspendisse pede. Morbi vel felis eget dolor sit amet ante.
+ Donec in faucibus orci luctus ullamcorper feugiat, pulvinar felis, 
+ dignissim vitae, vestibulum vel, nibh. Ut sagittis, metus facilisis eget,
+ suscipit sed, congue sit amet, ante. Fusce nisl risus, euismod nulla eu 
+ scelerisque lorem nec mauris. Nam interdum malesuada. Ut blandit, est 
+ et netus et malesuada ultricies. Donec eget lacus sagittis et, 
+ tempus purus. Phasellus quis lectus nulla quis velit vitae massa. 
+ Aliquam ultricies sollicitudin. Nulla facilisi. Nullam laoreet, 
+ purus in enim. Etiam at mauris et felis odio at libero. Duis lobortis, 
+ massa in ligula faucibus orci sit amet tellus. Ut vel risus. Vivamus 
+ fermentum gravida ullamcorper quam. Aliquam erat erat volutpat. 
+ Phasellus semper vel, consectetuer adipiscing elit. Integer leo 
+ ut malesuada ultricies. Nullam semper eu, rhoncus tortor. 
+ Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+ per conubia nostra, per inceptos hymenaeos. </p>
+
+<h2>Pierwszy podtytuł</h2>
+
+
+<p>Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation 
+ullamco laboris nisi ut aliquip ex ea commodo consequat. <p>
+Duis aute irure dolor in reprehenderit in voluptate velit
+ esse cillum dolore eu fugiat nulla pariatur. 
+ Excepteur sint occaecat cupidatat non proident, 
+ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</main>
+</sector>
+ </head>
+ </body>
+
+
+</html>
