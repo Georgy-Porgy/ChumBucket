@@ -1,0 +1,278 @@
+#include "pch.h"
+#include <stdio.h>
+
+int main()
+{
+	int xDay = 1;
+	int xMonth = 1;
+	int xYear = 1;
+	int xIlosc = 1;
+	int xPrzestepny = 1;
+	int xYY = 1;
+	int xC = 1;
+	int xG = 1;
+	int xD1s = 1;
+	int xDzienTygodnia = 1;
+	int xP = 1;
+	int xR = 1;
+	int xY = 1;
+	int xZ = 1;
+	int xLDM = 1;
+	int xW = 0;
+	printf("Podaj rok:");
+	scanf_s("%i", &xYear);
+	if ((xYear < 1970) || (xYear > 2019))
+	{
+		printf("Podano niepoprawny rok.\n");
+		return 0;
+	}
+	printf("Podaj miesiac:");
+	scanf_s("%i", &xMonth);
+	if ((xMonth < 1) || (xMonth > 12))
+	{
+		printf("Podano niepoprawny miesiac.\n");
+		return 0;
+	}
+	printf("Podaj dzien:");
+	scanf_s("%i", &xDay);
+	if ((xDay < 1) || (xDay > 31))
+	{
+		printf("Podano niepoprawny dzien.\n");
+		return 0;
+	}
+	if ((xMonth == 2) && (xDay > 28))
+	{
+		printf("Podano niepoprawny dzien w miesiacu\n");
+		return 0;
+	}
+	if (((xMonth == 4) || (xMonth == 6) || (xMonth == 9) || (xMonth == 11)) && (xDay > 30))
+	{
+		printf("Podano niepoprawny dzien w miesiacu\n");
+		return 0;
+	}
+	xPrzestepny = 0;
+	if (xYear % 400 == 0)
+	{
+		printf("Podany rok jest przestepny.\n");
+		xPrzestepny = 1;
+	}
+	else
+		if (xYear % 4 == 0)
+		{
+			printf("Podany rok jest przestepny.\n");
+			xPrzestepny = 1;
+		}
+		else
+		{
+			printf("Podany rok nie jest przestepny.\n");
+			xPrzestepny = 0;
+		}
+	if (xMonth == 1)
+	{
+		xIlosc = xDay;
+	}
+	if (xMonth == 2)
+	{
+		xIlosc = 31 + xDay;
+	}
+	if (xMonth == 3)
+	{
+		xIlosc = 59 + xDay;
+	}
+	if (xMonth == 4)
+	{
+		xIlosc = 90 + xDay;
+	}
+	if (xMonth == 5)
+	{
+		xIlosc = 119 + xDay;
+	}
+	if (xMonth == 6)
+	{
+		xIlosc = 151 + xDay;
+	}
+	if (xMonth == 7)
+	{
+		xIlosc = 181 + xDay;
+	}
+	if (xMonth == 8)
+	{
+		xIlosc = 212 + xDay;
+	}
+	if (xMonth == 9)
+	{
+		xIlosc = 243 + xDay;
+	}
+	if (xMonth == 10)
+	{
+		xIlosc = 273 + xDay;
+	}
+	if (xMonth == 11)
+	{
+		xIlosc = 304 + xDay;
+	}
+	if (xMonth == 12)
+	{
+		xIlosc = 334 + xDay;
+	}
+	if ((xPrzestepny == 1) && (xMonth > 2))
+	{
+		xIlosc = xIlosc + 1;
+	}
+	xYY = (xYear - 1) % 100;
+	xC = (xYear - 1) - xYY;
+	xG = xYY + xYY / 4;
+	xD1s = (((((xC / 100) % 4) * 5) + xG) % 7);
+	xDzienTygodnia = (xD1s + xIlosc - 1) % 7;
+	if (xDzienTygodnia == 0)
+	{
+		printf("Dzien %02d.%02d.%d to poniedzialek.\n", xDay, xMonth, xYear);
+	}
+	if (xDzienTygodnia == 1)
+	{
+		printf("Dzien %02d.%02d.%d to wtorek.\n", xDay, xMonth, xYear);
+	}
+	if (xDzienTygodnia == 2)
+	{
+		printf("Dzien %02d.%02d.%d to sroda.\n", xDay, xMonth, xYear);
+	}
+	if (xDzienTygodnia == 3)
+	{
+		printf("Dzien %02d.%02d.%d to czwartek.\n", xDay, xMonth, xYear);
+	}
+	if (xDzienTygodnia == 4)
+	{
+		printf("Dzien %02d.%02d.%d to piatek.\n", xDay, xMonth, xYear);
+	}
+	if (xDzienTygodnia == 5)
+	{
+		printf("Dzien %02d.%02d.%d to sobota.\n", xDay, xMonth, xYear);
+	}
+	if (xDzienTygodnia == 6)
+	{
+		printf("Dzien %02d.%02d.%d to niedziela.\n", xDay, xMonth, xYear);
+	}
+	if (xMonth == 1)
+	{
+		xR = 1;
+	}
+	if (xMonth == 2)
+	{
+		xR = 32;
+	}
+	if (xMonth == 3)
+	{
+		xR = 60;
+	}
+	if (xMonth == 4)
+	{
+		xR = 91;
+	}
+	if (xMonth == 5)
+	{
+		xR = 121;
+	}
+	if (xMonth == 6)
+	{
+		xR = 152;
+	}
+	if (xMonth == 7)
+	{
+		xR = 182;
+	}
+	if (xMonth == 8)
+	{
+		xR = 213;
+	}
+	if (xMonth == 9)
+	{
+		xR = 244;
+	}
+	if (xMonth == 10)
+	{
+		xR = 274;
+	}
+	if (xMonth == 11)
+	{
+		xR = 305;
+	}
+	if (xMonth == 12)
+	{
+		xR = 335;
+	}
+	if ((xPrzestepny == 1) && (xMonth > 2))
+	{
+		xR = xR + 1;
+	}
+	xYY = (xYear - 1) % 100;
+	xC = (xYear - 1) - xYY;
+	xG = xYY + xYY / 4;
+	xD1s = (((((xC / 100) % 4) * 5) + xG) % 7);
+	xP = (xD1s + xR - 1) % 7;
+	printf("Dni od poczatku roku: %d\n", xIlosc);
+	if ((xMonth == 1) || (xMonth == 3) || (xMonth == 5) || (xMonth == 7) || (xMonth == 8) || (xMonth == 10) || (xMonth == 12))
+	{
+		xLDM = 31;
+	}
+	if ((xMonth == 4) || (xMonth == 6) || (xMonth == 9) || (xMonth == 11))
+	{
+		xLDM = 30;
+	}
+	if ((xMonth == 2) && (xPrzestepny == 0))
+	{
+		xLDM = 28;
+	}
+	if ((xMonth == 2) && (xPrzestepny == 1))
+	{
+		xLDM = 29;
+	}
+	printf("Kalendarz na miesiac: %d.%02d\n", xYear, xMonth);
+	printf(" Pn  Wt  Sr  Cz  Pt  Sb  Nd\n");
+	if (xP == 1)
+		printf("    ");
+	if (xP == 2)
+		printf("        ");
+	if (xP == 3)
+		printf("            ");
+	if (xP == 4)
+		printf("                 ");
+	if (xP == 5)
+		printf("                     ");
+	if (xP == 6)
+		printf("                        ");
+	xY == 1;
+	xW = xP - 1;
+	while (xY <= xLDM)
+	{
+		if (xY < 10)
+			printf("  %d ", xY);
+		if (xY >= 10)
+		{
+			printf(" %d ", xY);
+		}
+		++xY;
+		if (xW % 7 == 5)
+		{
+			printf("\n");
+		}
+		++xW;
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+}
+
+
+
