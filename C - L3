@@ -1,68 +1,67 @@
-#include "pch.h"
 #include <stdio.h>
 int get_value(int lower, int upper);
 int czy_przestepny(int Year);
 int wypisz_dzien_tygodnia(int dzientygodnia);
-int ilosc_dni_miesiaca(int month,int year);
-int wyswietl_kalendarz(int month, int year, int xdnimiesiaca, int xdzientygodniamiesiac);
+int ilosc_dni_miesiaca(int month, int year);
+int wyswietl_kalendarz(int month, int year, int dnimiesiaca, int dzientygodniamiesiac);
 int wylicz_dni(int day, int month, int year);
 int main(void)
 {
-	int xC = 0;
-	int xYY = 0;
-	int xG = 0;
-	int xdzientygodnia = 0;
-	int xdzienpoczatekroku = 0;
-	int xdnimiesiaca = 0;
-	int xdzientygodniamiesiac = 0;
-	
+	int C = 0;
+	int YY = 0;
+	int G = 0;
+	int dzientygodnia = 0;
+	int dzienpoczatekroku = 0;
+	int dnimiesiaca = 0;
+	int dzientygodniamiesiac = 0;
+
 	printf("Podaj dzien: ");
-	int xDay = get_value(1, 31);
-	if (xDay < 1)
+	int Day = get_value(1, 31);
+	if (Day < 1)
 		return 0;
 
 	printf("Podaj miesiac:");
-	int xMonth = get_value(1, 12);
-	if (xMonth < 1)
+	int Month = get_value(1, 12);
+	if (Month < 1)
 		return 0;
 
 	printf("Podaj rok:");
-	int xYear = get_value(1970, -1);
-	if (xYear < 1)
+	int Year = get_value(1970, -1);
+	if (Year < 1)
 		return 0;
 
-	int xrokprzestepny = czy_przestepny(xYear);
-	
-	if(xrokprzestepny ==1)
-		printf("Podany rok %i jest przestepny \n", xYear);
+	int rokprzestepny = czy_przestepny(Year);
+
+	if (rokprzestepny == 1)
+		printf("Podany rok %i jest przestepny \n", Year);
 	else
-		printf("Podany rok %i nie jest przestepny \n", xYear);
-	
-	xYY = (xYear - 1) % 100;
-	xC = (xYear - 1) - xYY;
-	xG = xYY + xYY / 4;
-	xdzienpoczatekroku = (((((xC / 100) % 4) * 5) + xG) % 7);
-	
-	int xIlosc = wylicz_dni(xDay, xMonth, xYear);
-	int xiloscMiesiac = wylicz_dni(1, xMonth, xYear);
-	printf("Dni od poczatku roku: %i\n", xIlosc);
-	
-	xdzientygodnia = (xdzienpoczatekroku + xIlosc - 1) % 7;
-	
-	xdzientygodniamiesiac = (xdzienpoczatekroku + xiloscMiesiac - 1) % 7;
-	printf("Dzien tygodnia dla 01.%d.%d to ", xMonth, xYear);
-	 int wypisz = wypisz_dzien_tygodnia(xdzientygodniamiesiac);
+		printf("Podany rok %i nie jest przestepny \n", Year);
+
+	YY = (Year - 1) % 100;
+	C = (Year - 1) - YY;
+	G = YY + YY / 4;
+	dzienpoczatekroku = (((((C / 100) % 4) * 5) + G) % 7);
+
+	int Ilosc = wylicz_dni(Day, Month, Year);
+	int iloscMiesiac = wylicz_dni(1, Month, Year);
+	printf("Dni od poczatku roku: %i\n", Ilosc);
+
+	dzientygodnia = (dzienpoczatekroku + Ilosc - 1) % 7;
+
+	dzientygodniamiesiac = (dzienpoczatekroku + iloscMiesiac - 1) % 7;
+	printf("Dzien tygodnia dla 01.%d.%d to ", Month, Year);
+	int wypisz = wypisz_dzien_tygodnia(dzientygodniamiesiac);
 	printf("\n");
 
-	printf("Podany dzien tygodnia %i.%i.%i to ", xDay, xMonth, xYear);
-	wypisz = wypisz_dzien_tygodnia(xdzientygodnia);
+	printf("Podany dzien tygodnia %i.%i.%i to ", Day, Month, Year);
+	wypisz = wypisz_dzien_tygodnia(dzientygodnia);
 	printf("\n");
-	
-	xdnimiesiaca = ilosc_dni_miesiaca(xMonth, xYear);
+
+	dnimiesiaca = ilosc_dni_miesiaca(Month, Year);
 	printf("\n");
-	printf("Kalendarz na miesiac %i.%i \n", xMonth, xYear);
+	printf("Kalendarz na miesiac %i.%i \n", Month, Year);
 	printf("Pn  Wt  Sr  Cz  Pt  So  Nd \n");
-	int wyswietl = wyswietl_kalendarz(xMonth, xYear, xdnimiesiaca, xdzientygodniamiesiac);
+	int wyswietl = wyswietl_kalendarz(Month, Year, dnimiesiaca, dzientygodniamiesiac);
 }
 
 
@@ -118,39 +117,39 @@ int wypisz_dzien_tygodnia(int dzientygodnia)
 		printf("niedziela.");
 	return 0;
 }
-int ilosc_dni_miesiaca(int month,int year)
+int ilosc_dni_miesiaca(int month, int year)
 {
-	int xdnimiesiaca;
-	int xrokprzestepny = czy_przestepny(year);
-	xdnimiesiaca = 31;
+	int dnimiesiaca;
+	int rokprzestepny = czy_przestepny(year);
+	dnimiesiaca = 31;
 	if ((month == 4) || (month == 6) || (month == 9) || (month == 11))
 	{
-		xdnimiesiaca = 30;
+		dnimiesiaca = 30;
 	}
 	if (month == 2)
 	{
-		xdnimiesiaca = 28;
-		if (xrokprzestepny == 1)
+		dnimiesiaca = 28;
+		if (rokprzestepny == 1)
 		{
-			xdnimiesiaca = 29;
+			dnimiesiaca = 29;
 		}
 	}
-	return xdnimiesiaca;
+	return dnimiesiaca;
 }
-int wyswietl_kalendarz(int month, int year, int xdnimiesiaca, int xdzientygodniamiesiac)
+int wyswietl_kalendarz(int month, int year, int dnimiesiaca, int dzientygodniamiesiac)
 {
 	int x = 0;
 	int y;
-	if (xdzientygodniamiesiac != 0)
+	if (dzientygodniamiesiac != 0)
 	{
-		while (x < xdzientygodniamiesiac)
+		while (x < dzientygodniamiesiac)
 		{
 			printf("    ");
 			x = x + 1;
 		}
 	}
 	y = 1;
-	while (y <= xdnimiesiaca)
+	while (y <= dnimiesiaca)
 	{
 		if (y < 10)
 			printf(" %i  ", y);
@@ -160,7 +159,7 @@ int wyswietl_kalendarz(int month, int year, int xdnimiesiaca, int xdzientygodnia
 		x = x + 1;
 		if (x % 7 == 0)
 		{
-		
+
 			printf("\n");
 			x = 0;
 		}
@@ -169,75 +168,75 @@ int wyswietl_kalendarz(int month, int year, int xdnimiesiaca, int xdzientygodnia
 }
 int wylicz_dni(int day, int month, int year)
 {
-	int xIlosc = 0;
-	int xiloscMiesiac = 0;
+	int Ilosc = 0;
+	int iloscMiesiac = 0;
 	if (month == 1)
 	{
-		xIlosc = day;
-		xiloscMiesiac = 1;
+		Ilosc = day;
+		iloscMiesiac = 1;
 	}
 	if (month == 2)
 	{
-		xIlosc = 31 + day;
-		xiloscMiesiac = 31 + 1;
+		Ilosc = 31 + day;
+		iloscMiesiac = 31 + 1;
 	}
 	if (month == 3)
 	{
-		xIlosc = 59 + day;
-		xiloscMiesiac = 59 + 1;
+		Ilosc = 59 + day;
+		iloscMiesiac = 59 + 1;
 	}
 	if (month == 4)
 	{
-		xIlosc = 90 + day;
-		xiloscMiesiac = 90 + 1;
+		Ilosc = 90 + day;
+		iloscMiesiac = 90 + 1;
 	}
 	if (month == 5)
 	{
-		xIlosc = 120 + day;
-		xiloscMiesiac = 120 + 1;
+		Ilosc = 120 + day;
+		iloscMiesiac = 120 + 1;
 	}
 	if (month == 6)
 	{
-		xIlosc = 151 + day;
-		xiloscMiesiac = 151 + 1;
+		Ilosc = 151 + day;
+		iloscMiesiac = 151 + 1;
 	}
 	if (month == 7)
 	{
-		xIlosc = 181 + day;
-		xiloscMiesiac = 181 + 1;
+		Ilosc = 181 + day;
+		iloscMiesiac = 181 + 1;
 	}
 	if (month == 8)
 	{
-		xIlosc = 212 + day;
-		xiloscMiesiac = 212 + 1;
+		Ilosc = 212 + day;
+		iloscMiesiac = 212 + 1;
 	}
 	if (month == 9)
 	{
-		xIlosc = 243 + day;
-		xiloscMiesiac = 243 + 1;
+		Ilosc = 243 + day;
+		iloscMiesiac = 243 + 1;
 	}
 	if (month == 10)
 	{
-		xIlosc = 273 + day;
-		xiloscMiesiac = 273 + 1;
+		Ilosc = 273 + day;
+		iloscMiesiac = 273 + 1;
 	}
 	if (month == 11)
 	{
-		xIlosc = 304 + day;
-		xiloscMiesiac = 304 + 1;
+		Ilosc = 304 + day;
+		iloscMiesiac = 304 + 1;
 	}
 	if (month == 12)
 	{
-		xIlosc = 334 + day;
-		xiloscMiesiac = 334 + 1;
+		Ilosc = 334 + day;
+		iloscMiesiac = 334 + 1;
 	}
-	int xrokprzestepny = czy_przestepny(year);
-	if ((xrokprzestepny == 1) && (month > 2))
+	int rokprzestepny = czy_przestepny(year);
+	if ((rokprzestepny == 1) && (month > 2))
 	{
-		xIlosc = xIlosc + 1;
-		xiloscMiesiac = xiloscMiesiac + 1;
+		Ilosc = Ilosc + 1;
+		iloscMiesiac = iloscMiesiac + 1;
 	}
-	return xIlosc;
+	return Ilosc;
 }
 
 
