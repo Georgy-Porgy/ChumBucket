@@ -1,18 +1,49 @@
 body {
-  background-color: powderblue;
-}
-h1 {
-  color: blue;
-}
-p {
-  color: red;
+	font-family: arial;
+	width: 970px;
+	padding: 25px;
+  margin: 25px auto;
 }
 
 
-h1 {
-	font-family:arial;
+p:first-of-type{
+  font-weight: bold;
 }
 
-p1 {
-	font-weight:bold;
+  
+
+
+
+p+p::first-letter{
+  font-size: 200%;;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
