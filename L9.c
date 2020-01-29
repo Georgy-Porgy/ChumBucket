@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,7 +14,6 @@ int main()
 
 	for (pliki = 1; pliki < 11; pliki++)
 	{
-//		printf("\n%d zestaw 100 zapisanych liczb:\n", pliki);
 		fileWrite(pliki);
 	}
 	printf("\n");
@@ -53,7 +53,6 @@ void fileWrite(int i)
 		for (j = 1; j < 101; j++)
 		{
 			x = rand() % 11;
-	//		printf("%d\t", x);
 			fprintf_s(outputFile, "%d\n", x);
 		}
 		printf("\n");
